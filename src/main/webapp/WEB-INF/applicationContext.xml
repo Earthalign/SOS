@@ -25,6 +25,7 @@
         <property name="username" value="wwsisgrupa" />
         <property name="password" value="tajnehaslowwsis" />
     </bean>
+
     <!--  <tx:annotation-driven /> -->
     <bean id="entityManagerFactoryBean" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="dataSource" ref="dataSource" />
