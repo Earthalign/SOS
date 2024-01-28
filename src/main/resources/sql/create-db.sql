@@ -3,13 +3,13 @@
 /* Created on:     21/01/2024 13:10:53                          */
 /*==============================================================*/
 
+
 /*==============================================================*/
 /* Table: ACCOUNT                                               */
 /*==============================================================*/
 create table ACCOUNT 
 (
    ACCOUNT_ID           integer                        not null,
-   STUDENT_ID           integer                        not null,
    ACCOUNTSTATUS_ID     integer                        not null,
    "LOGIN"              varchar(50)                    null,
    PASSWORD             varchar(50)                    null,
@@ -91,7 +91,7 @@ create table PAYMENT
    STUDENT_ID           integer                        not null,
    AMMOUNT              float(10)                      null,
    TITLE                varchar(50)                    null,
-   IS_PAID              smallint                       null,
+   IS_PAID              bool                       null,
    constraint PK_PAYMENT primary key (PAYMENT_ID)
 );
 
