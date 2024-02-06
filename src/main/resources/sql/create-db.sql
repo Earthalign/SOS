@@ -91,7 +91,7 @@ create table PAYMENT
    STUDENT_ID           integer                        not null,
    AMMOUNT              float(10)                      null,
    TITLE                varchar(50)                    null,
-   IS_PAID              bool                       null,
+   IS_PAID              boolean                        null,
    constraint PK_PAYMENT primary key (PAYMENT_ID)
 );
 
