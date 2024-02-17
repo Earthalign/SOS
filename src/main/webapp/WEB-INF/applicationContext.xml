@@ -11,7 +11,7 @@
            http://www.springframework.org/schema/context
            http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 
-    <context:component-scan base-package="pl.microblog" />
+    <context:component-scan base-package="src.main.java.model" />
     <!-- Chcemy automatycznie obsługiwać wszystkie klasy z adnotacjami w tym pakiecie.
     UWAGA!!! każdy projekt może mieć oczywiście inną strukturę pakietów -->
 
@@ -20,16 +20,16 @@
     które byśmy skonfigurowali ręcznie -->
 
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="driverClassName" value="com.hsqldb.jdbc.Driver" />
-        <property name="url" value="jdbc:hsqldb://localhost:3306/sos" />
-        <property name="username" value="wwsisgrupa" />
-        <property name="password" value="tajnehaslowwsis" />
+        <property name="driverClassName" value="org.hsqldb.jdbc.JDBCDriver" />
+        <property name="url" value="jdbc:hsqldb:mem:sos_database" />
+        <property name="username" value="SA" />
+        <property name="password" value="" />
     </bean>
 
     <!--  <tx:annotation-driven /> -->
     <bean id="entityManagerFactoryBean" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="dataSource" ref="dataSource" />
-        <property name="packagesToScan" value="src.main.java" />
+        <property name="packagesToScan" value="src.main.java.model" />
         <property name="jpaVendorAdapter">
             <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
                 <property name="showSql" value="false" />
